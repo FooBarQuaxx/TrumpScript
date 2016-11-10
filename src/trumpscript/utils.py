@@ -191,5 +191,6 @@ class Utils:
 
         loc = locale.getdefaultlocale()
         loc = loc[0].upper() if bool(loc) else ''
-        if loc in _muslim_countries_locales:
-            raise Utils.SystemException("I think Islam hates us!")
+        for muslim_locale in _muslim_countries_locales:
+            if muslim_locale in loc:
+                raise Utils.SystemException("I think Islam hates us!")
