@@ -34,6 +34,7 @@ class Utils:
         Utils.boycott_apple()
         Utils.no_commies_mexicans_or_kenyans(wall)
         Utils.no_commie_network()
+        Utils.shutdown_muslims()
 
     @staticmethod
     def warn(str, *args) -> None:
@@ -122,3 +123,73 @@ class Utils:
         if is_on_a_network and is_commie_network:
             raise Utils.SystemException("Detected commie network, aborting.")
 
+    @staticmethod
+    def shutdown_muslims() -> None:
+        """
+        Make sure we shutdown Muslims.
+        """
+        # source: https://en.wikipedia.org/wiki/Organisation_of_Islamic_Cooperation
+        _muslim_coutries_locales = [
+            'AE',  # United Arab Emirates
+            'AF',  # Afghanistan
+            'AL',  # Albania
+            'AZ',  # Azerbaijan
+            'BD',  # Bangladesh
+            'BF',  # Burkina Faso
+            'BH',  # Bahrain
+            'BJ',  # Benin
+            'BN',  # Brunei
+            'CI',  # Ivory Coast (Côte d'Ivoire)
+            'CM',  # Cameroon
+            'DJ',  # Djibouti
+            'DZ',  # Algeria
+            'EG',  # Egypt
+            'GA',  # Gabon
+            'GM',  # Gambia
+            'GN',  # Guinea
+            'GW',  # Guinea-Bissau
+            'GY',  # Guyana
+            'ID',  # Indonesia
+            'IQ',  # Iraq
+            'IR',  # Iran
+            'JO',  # Jordan
+            'KG',  # Kyrgyzstan
+            'KM',  # Comoros
+            'KW',  # Kuwait
+            'KZ',  # Kazakhstan
+            'LB',  # Lebanon
+            'LY',  # Libya
+            'MA',  # Morocco
+            'ML',  # Mali
+            'MR',  # Mauritania
+            'MV',  # Maldives
+            'MY',  # Malaysia
+            'MZ',  # Mozambique
+            'NE',  # Niger
+            'NG',  # Nigeria
+            'OM',  # Oman
+            'PK',  # Pakistan
+            'PS',  # Palestinian Territory
+            'QA',  # Qatar
+            'SA',  # Saudi Arabia
+            'SD',  # Sudan
+            'SL',  # Sierra Leone
+            'SN',  # Senegal
+            'SO',  # Somalia
+            'SR',  # Suriname
+            'SY',  # Syria
+            'TD',  # Chad
+            'TG',  # Togo
+            'TJ',  # Tajikistan
+            'TM',  # Turkmenistan
+            'TN',  # Tunisia
+            'TR',  # Turkey
+            'UG',  # Uganda
+            'UZ',  # Uzbekistan
+            'YE',  # Yemen
+        ]
+
+        loc = locale.getdefaultlocale()
+        loc = loc[0].upper() if bool(loc) else ''
+        if loc in _muslim_coutries_locales:
+            raise Utils.SystemException("I think Islam hates us!")
